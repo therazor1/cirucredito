@@ -1,0 +1,84 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+
+.hero{
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    &__home{
+        background-image: url(../../src/images/Recurso_1.png);
+    }
+    &__nosotros{
+        background-image: url("../../src/images/Recurso 17.png");
+    }
+    &__beneficios{
+        background-image: url("../../src/images/Recurso 22.png");
+    }
+    &__convenios{
+        background-image: url("../../src/images/Recurso 43.png");
+    }
+    &__grid{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        height: 100vh;
+    }
+    &__contenedor{
+        // padding-top: 40rem;
+        grid-row: 2;
+        grid-column: 2/3;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 85%;
+    }
+    &__titulo{
+        margin-top: 5rem;
+        color: v.$blanco;
+        font-weight: 600;
+        text-align: right;
+        font-style: italic;
+        font-size: 4.2rem;
+        span {
+            display: block;
+            font-weight: 900;
+            font-style: normal;
+        }
+        margin-bottom: 1rem;
+        &-nosotros{
+            font-size: 6rem;
+        }
+    }
+    &__texto{
+        max-width: 50rem;
+        font-size: 1.8rem;
+        // margin-bottom: 4rem;
+        &-nosotros{
+            color: v.$blanco;
+        }
+    }
+    &__botones{
+        display: flex;
+        gap: 3rem;
+    }
+    &__btn1{
+        @include m.boton(v.$morado, v.$blanco);
+        border-radius: .9rem;
+        line-height: normal;
+    }
+    &__btn2{
+        @include m.boton(transparent, v.$blanco);
+        border-radius: .9rem;
+        border: 2px solid v.$blanco;
+        &-nosotros{
+            font-size: 1.8rem;
+        }
+    }
+}

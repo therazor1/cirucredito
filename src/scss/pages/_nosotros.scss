@@ -1,0 +1,43 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.nosotros {
+    background-image: url('../../src/images/Recurso 18.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 75rem;
+    &__contenedor{
+        padding: calc(v.$separacion * 2) 0 calc(v.$separacion * 4) 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__h3{
+        font-style: italic;
+        color: v.$naranja;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+    &__h2 {
+        text-align: left;
+        font-size: 6rem;
+        max-width: 20rem;
+        color: v.$morado;
+        margin-bottom: 3rem;
+    }
+    &__p1, &__p2, &__p3 {
+        color: v.$morado;
+        font-family: v.$fuente_secundaria;
+        font-weight: 500;
+        font-size: 2.2rem;
+    }
+    &__p1{
+        max-width: 90rem;
+        margin-bottom: 6rem;
+    }
+    &__p2 {
+        max-width: 60rem;
+        margin-bottom: 3rem;
+    }
+}

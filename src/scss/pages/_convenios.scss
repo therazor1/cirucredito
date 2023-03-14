@@ -1,0 +1,48 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.mejores{
+    background-color: v.$naranjaClaro;
+    &__contenedor{
+        padding: calc(v.$separacion * 3) 0;
+    }
+    &__lista{
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            flex-basis: 50%;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        &-imagen{
+            width: 30rem;
+        }
+        &-contenido{
+            h4{
+                text-transform: uppercase;
+                font-size: 2.5em;
+                color: v.$naranja;
+                margin: .5rem 0;
+            }
+            p{
+                color: v.$morado;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+.quienes{
+    padding: 20rem 0;
+    &__texto{
+        color: v.$morado;
+        font-family: v.$fuente_secundaria;
+        font-size: 1.8rem;
+        max-width: 90rem;
+        &-p1{
+            margin-bottom: 6rem;
+        }
+    }
+}

@@ -96,4 +96,27 @@
             top: -22rem;
         }
     }
+    &__mensaje{
+        position: relative;
+        z-index: 1000;
+        &-caja{
+            position: absolute;
+            // width: 50%;
+            background-image: url('../../src/images/Recurso 50.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: -11.8rem;
+            border-top-right-radius: .9rem;
+            z-index: -1;
+            padding: 5rem 0 9rem 9rem;
+            p{
+                font-size: 1.6rem;
+                max-width: 80rem;
+                color: v.$blanco;
+                span{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
