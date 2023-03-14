@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["document","querySelector","Splide","type","height","perPage","breakpoints","640","mount"],"mappings":"AAAAA,SAASC,cAAc,YAAY,IAAIC,OAAO,UAAU,CAACC,KAAK,OAAOC,OAAO,OAAOC,QAAQ,EAAEC,YAAY,CAACC,IAAI,CAACH,OAAO,WAAWI","file":"main.js","sourcesContent":[]}

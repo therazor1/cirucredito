@@ -1,0 +1,88 @@
+@use 'variables' as v;
+
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin text-shadow {
+    text-shadow: 0 4px 6px rgba(0,0,0,.32);
+}
+
+@mixin boton($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1rem 1.5rem;
+    color: $colorTexto;
+    font-size: 1.6rem;
+    font-weight: normal;
+    display: inline-block;
+    font-weight: 700;
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 5rem 0;
+
+    @include tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: darken( $bgColor, 10% );
+        cursor: pointer;
+    }
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin grid_percent($columna1, $columna2) {
+    display: grid;
+    grid-template-columns: $columna1 $columna2;
+}
+
+@mixin flex( $espaciado ) {
+    display: flex;
+    align-items: center;
+    gap: $espaciado;
+}
+
+@mixin shadow($x, $y, $blur, $spread, $color) {
+    box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin contenedor-lg{
+    width: min(90%, 1750px);
+    margin: 0 auto;
+}
+
+@mixin contenedor{
+    width: min(95%, 140rem);
+    margin: 0 auto;
+}
+
+@mixin contenedor-md{
+    width: min(95%, 80rem);
+    margin: 0 auto;
+}
+    
+@mixin contenedor-sm{
+    width: min(95%, 60rem);
+    margin: 0 auto;
+}

@@ -1,0 +1,380 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.hero{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../../src/images/Recurso_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    &__grid{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        height: 100vh;
+    }
+    &__contenedor{
+        // padding-top: 40rem;
+        grid-row: 2;
+        grid-column: 2/3;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 85%;
+    }
+    &__titulo{
+        margin-top: 5rem;
+        color: v.$blanco;
+        font-weight: 600;
+        text-align: right;
+        font-style: italic;
+        font-size: 4.2rem;
+        span {
+            display: block;
+            font-weight: 900;
+            font-style: normal;
+        }
+        margin-bottom: 1rem;
+    }
+    &__texto{
+        max-width: 50rem;
+        font-size: 1.8rem;
+        // margin-bottom: 4rem;
+    }
+    &__botones{
+        display: flex;
+        gap: 3rem;
+    }
+    &__btn1{
+        @include m.boton(v.$morado, v.$blanco);
+        border-radius: .9rem;
+        line-height: normal;
+    }
+    &__btn2{
+        @include m.boton(transparent, v.$blanco);
+        border-radius: .9rem;
+        border: 2px solid v.$blanco;
+    }
+}
+
+.video {
+    position: relative;
+    top: -5rem;
+    z-index: -1;
+    video {
+        width: 100%;
+    }
+}
+
+.queremos{
+    position: relative;
+    margin-top: -5.5rem;
+    background-color: v.$naranjaClaro;
+    background-image: url('../../src/images/Recurso2.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 8rem 0;
+    &__texto{
+        color: v.$naranja;
+        font-style: italic;
+        font-weight: 500;
+        margin-bottom: 5rem;
+    }
+    &__titulo{
+        color: v.$morado;
+        font-weight: 800;
+        text-align: left;
+        max-width: 32rem;
+        font-size: 4rem;
+    }
+    &__lista{
+        margin-top: 3.5rem;
+        column-count: 2;
+        padding-left: 0;
+        li {
+            // flex-basis: calc(50% - v.$separacion );
+            box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+            background-color: v.$blanco;
+            color: v.$morado;
+            padding: 1rem;
+            width: fit-content;
+            font-family: v.$fuente_secundaria;
+            font-weight: 500;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-radius: .9rem;
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.financiamiento {
+    padding: 4rem 0;
+    background-color: v.$naranjaClaro;
+    padding-top: 4rem;
+    &__texto{
+        // padding: 4rem 0;
+        font-style: italic;
+        color: v.$naranja;
+        font-weight: 500;
+    }
+    &__lista{
+        padding: 0 5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+    &__lista__card{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex-basis: 20%;
+    }
+    &__card__imagen{
+        background-color: v.$morado;
+        width: 12rem;
+        padding: 2rem;
+        border-radius: 1.8rem;
+        position: relative;
+        top: 16%;
+    }
+    &__card__texto{
+        background-color: v.$naranja;
+        width: 100%;
+        height: 15rem;
+        display: grid;
+        place-items: center;
+        border-radius: .9rem;
+        p{
+            color: v.$blanco;
+            font-size: 1.5rem;
+        }
+    }
+    &__button{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+    }
+    &__btn1{
+        @include m.boton(v.$morado, v.$blanco);
+        border-radius: .9rem;
+        padding: 1.6rem 3rem;
+        font-size: 1.5rem;
+    }
+    &__btn2{
+        @include m.boton(transparent, v.$morado);
+        border: 2px solid v.$morado;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        border-radius: .9rem;
+        padding: .5rem 3rem;
+    }
+}
+
+
+.elegirnos{
+    background-image: url('../../src/images/Recurso 11.png');
+    background-repeat: no-repeat;
+    padding: calc(v.$separacion * 5 ) 0 calc(v.$separacion * 2) 0; 
+    background-color: v.$naranjaClaro;
+    &__titulo{
+        text-align: left;
+        font-weight: bold;
+        font-size: 4.2rem;
+        max-width: 20rem;
+        color: v.$morado;
+        margin-bottom: 2.5rem;
+    }
+    &__mensaje{
+        color: v.$morado;
+        font-family: v.$fuente_secundaria;
+        padding: 1.8rem 5rem;
+        span{
+            font-weight: bold;
+        }
+        &-msg{
+            background-color: v.$blanco;
+            box-shadow: 1rem .5rem 1rem v.$grisClaro;
+            border-radius: .9rem;
+            margin-bottom: 4rem;
+        }
+    }
+    &__tabs{
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap:2rem;
+            
+            li{
+                font-family: v.$fuente_secundaria;
+                background-color: v.$naranja;
+                padding: 1.2rem 3rem;
+                text-transform: uppercase;
+                border-radius: .9rem;
+                font-weight: 600;
+                color: v.$blanco;
+                font-style: italic;
+                &:last-of-type{
+                    background-color: v.$morado;
+                }
+            }
+        }
+    }
+}
+
+.convenios {
+    padding: calc(v.$separacion * 6) 0;
+    background-image: url('../../src/images/Recurso 12.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+    position: relative;
+    &__contenedor{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: -10rem;
+        justify-content: space-evenly;
+    }
+    &__p1{
+        color: v.$blanco;
+        font-style: italic;
+        font-weight: 500;
+        margin-bottom: v.$separacion;
+    }
+    &__titulo{
+        text-align: left;
+        font-size: 4rem;
+        font-weight: 900;
+        color: v.$blanco;
+        margin-bottom: v.$separacion;
+    }
+    &__p2{
+        color: v.$blanco;
+        font-size: 1.6rem;
+        font-family: v.$fuente_secundaria;
+        max-width: 55rem;
+        margin-bottom: calc(v.$separacion * 2);
+    }
+    &__enlace{
+        color: v.$blanco;
+        font-size: 1.8rem;
+        font-weight: bold;
+        padding: 1rem 2rem;
+        border: 2px solid v.$blanco;
+        width: fit-content;
+        border-radius: .9rem;
+    }
+}
+
+.testimonios{
+    background-color: v.$naranjaClaro;
+    padding: calc(v.$separacion * 6) 0 0 0;
+    position: relative;
+    top: -22rem;
+    z-index: 1;
+    &__p1{
+        color: v.$naranja;
+        font-weight: 500;
+        font-style: italic;
+        margin-bottom: v.$separacion;
+    }
+    &__titulo{
+        color: v.$naranja;
+        text-align: left;
+        font-size: 5rem;
+        margin-bottom: v.$separacion;
+        span{
+            color: v.$morado;
+            display: block;
+        }
+    }
+    &__p2{
+        font-family: v.$fuente_secundaria;
+        font-size: 1.6rem;
+        color: v.$morado;
+    }
+    &__logo{
+        // background-image: url('../../src/images/Recurso 15.png');
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        padding: 5rem 0;
+        img{
+            width: 20rem;
+        }
+    }
+}
+
+
+.testimoniales__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto !important;
+    padding: v.$separacion 0;
+    font-family: v.$fuente_secundaria;
+    position: relative;
+    padding: 0 8rem;
+    &__imagen{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        img {
+            width: 80%;
+            border-radius: 50%;
+        }
+    }
+    &__texto{
+        position: relative;
+        top: - calc(v.$separacion * 2);
+        z-index: 1;
+        background-image: url('../../src/images/Recurso 13.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 38rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4rem;
+        &-titulo{
+            color: v.$naranja;
+            font-size: 2rem;
+            font-weight: normal;
+            span{
+                font-weight: bold;
+            }
+        }
+        &-subtitulo{
+            color: v.$morado;
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+        &-general{
+            text-align: center;
+            color: v.$morado;
+            font-size: 1.8rem;
+            max-width: 80rem;
+            span{
+                display: block;
+                font-weight: 600;
+            }
+        }
+        // padding: calc(v.$separacion * 3) 2rem 1rem 2rem;
+    }
+}
+

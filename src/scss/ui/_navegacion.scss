@@ -1,0 +1,31 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.navegacion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    &__contenedor{
+        display: grid;
+        place-items: center;
+    }
+    &__lista{
+        margin: 0;
+        background-color: v.$blanco;
+        // width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        padding: 3rem 4rem;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        a {
+            color: v.$morado;
+            font-size: 1.6rem;
+        }
+    }
+}
